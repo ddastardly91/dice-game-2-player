@@ -33,6 +33,10 @@ newGame.addEventListener("click", () => {
   p1CurScore = 0;
   p2CurScore = 0;
 
+  //Resetting hold variables.
+  holdp1 = false;
+  holdp2 = false;
+
   //Disabling the new game button.
   newGame.disabled = true;
 
@@ -77,6 +81,7 @@ rollDice.addEventListener("click", () => {
         p1Header.textContent = "BUST!";
         p2TotalScore++;
         p2TotalScoreText.textContent = p2TotalScore;
+
         rollDice.disabled = true;
         holdDice.disabled = true;
         newGame.disabled = false;
@@ -96,6 +101,7 @@ rollDice.addEventListener("click", () => {
         p2Header.textContent = "BUST!";
         p1TotalScore++;
         p1TotalScoreText.textContent = p1TotalScore;
+
         rollDice.disabled = true;
         holdDice.disabled = true;
         newGame.disabled = false;
@@ -109,6 +115,7 @@ rollDice.addEventListener("click", () => {
     p1Header.textContent = "LOSE!";
     p2TotalScore++;
     p2TotalScoreText.textContent = p2TotalScore;
+
     rollDice.disabled = true;
     holdDice.disabled = true;
     newGame.disabled = false;
@@ -117,6 +124,28 @@ rollDice.addEventListener("click", () => {
     p2Header.textContent = "LOSE!";
     p1TotalScore++;
     p1TotalScoreText.textContent = p1TotalScore;
+
+    rollDice.disabled = true;
+    holdDice.disabled = true;
+    newGame.disabled = false;
+  }
+
+  //Check if either player is holding and oponent gets higher current score.
+  if (holdp1 && p2CurScore > p1CurScore && randNum != 1) {
+    p2Header.textContent = "WIN!";
+    p2Header.style.color = "green";
+    p2TotalScore++;
+    p2TotalScoreText.textContent = p2TotalScore;
+
+    rollDice.disabled = true;
+    holdDice.disabled = true;
+    newGame.disabled = false;
+  } else if (holdp2 && p1CurScore > p2CurScore && randNum != 1) {
+    p1Header.textContent = "WIN!";
+    p1Header.style.color = "green";
+    p1TotalScore++;
+    p1TotalScoreText.textContent = p1TotalScore;
+
     rollDice.disabled = true;
     holdDice.disabled = true;
     newGame.disabled = false;
@@ -166,9 +195,11 @@ holdDice.addEventListener("click", () => {
   //Checking if its p1's turn, if true p1 HOLD's, if false p2 HOLD's
   if (playerTurn) {
     playerTurn = false;
+    holdp1 = true;
     p1Header.textContent = "HOLDING";
   } else {
     playerTurn = true;
     p2Header.textContent = "HOLDING";
+    holdp2 = true;
   }
 });
