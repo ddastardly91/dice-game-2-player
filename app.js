@@ -103,6 +103,25 @@ rollDice.addEventListener("click", () => {
     }
   }
 
+  //Check if either player rolls a 1 and if true they LOSE.
+  if (randNum === 1 && playerTurn) {
+    p1CurScoreText.style.color = "red";
+    p1Header.textContent = "LOSE!";
+    p2TotalScore++;
+    p2TotalScoreText.textContent = p2TotalScore;
+    rollDice.disabled = true;
+    holdDice.disabled = true;
+    newGame.disabled = false;
+  } else if (randNum === 1 && !playerTurn) {
+    p2CurScoreText.style.color = "red";
+    p2Header.textContent = "LOSE!";
+    p1TotalScore++;
+    p1TotalScoreText.textContent = p1TotalScore;
+    rollDice.disabled = true;
+    holdDice.disabled = true;
+    newGame.disabled = false;
+  }
+
   //Check to see if both players have the same current score and call a draw.
   if (p1CurScore === p2CurScore) {
     //Setting text and color for both players headers and changing button states.
