@@ -1,0 +1,42 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game - 2 Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="gameScreen">
+      <div class="p1-container">
+        <h1 class="p1-header">Player 1</h1>
+        <h5 class="current-score-p1">0</h5>
+
+        <div class="currentScore-p1">
+          <h6>Total Score</h6>
+          <p class="total-score-p1">0</p>
+        </div>
+      </div>
+      <div class="p2-container">
+        <h1 class="p2-header">Player 2</h1>
+        <h5 class="current-score-p2">0</h5>
+
+        <div class="currentScore-p2">
+          <h6>Total Score</h6>
+          <p class="total-score-p2">0</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="gamePanel">
+      <button class="new-game">NEW GAME</button>
+      <img id="dice" src="assets/dice6.png" alt="die" width="200px" />
+      <div class="button-container visible">
+        <button id="roll-dice">ROLL DICE</button>
+        <button id="hold-dice">HOLD</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

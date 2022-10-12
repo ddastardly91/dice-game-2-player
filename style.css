@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#gameScreen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+
+h5 {
+  font-size: 200px;
+  margin: 0;
+}
+
+.p1-container {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  background-color: #333;
+  text-align: center;
+  color: white;
+  font-size: 80px;
+}
+
+.p2-container {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  background-color: #fff;
+  text-align: center;
+  color: #333;
+  font-size: 80px;
+}
+
+.gamePanel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: calc(50vw - (275.89px / 2));
+  height: 100vh;
+
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+}
+
+.button-container button {
+  padding: 15px 40px;
+  background-color: #f51166;
+  border: 3px solid black;
+  margin: 10px;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.button-container button:hover {
+  color: black;
+  background-color: #fff;
+  border-color: #f51166;
+}
+
+.new-game {
+  padding: 15px 40px;
+  margin: 50px;
+  font-weight: bold;
+  border-radius: 15px;
+  background-color: #f51166;
+  border: 3px solid black;
+  color: white;
+}
+
+.new-game:hover {
+  color: black;
+  background-color: #fff;
+  border-color: #f51166;
+}
+
+.currentScore-p1 * {
+  margin: 0;
+  padding: 0;
+}
+
+.currentScore-p1 {
+  margin: auto auto 100px auto;
+  padding: 30px 50px;
+  border: 3px solid #fff;
+  border-radius: 25px;
+}
+
+.currentScore-p2 * {
+  margin: 0;
+  padding: 0;
+}
+
+.currentScore-p2 {
+  margin: auto auto 100px auto;
+  padding: 30px 50px;
+  border: 3px solid #333;
+  border-radius: 25px;
+}
+
+button:disabled {
+  background-color: lightgray;
+  color: #777;
+  border-color: gray;
+}
+
+button:disabled:hover {
+  background-color: lightgray;
+  color: #777;
+  border-color: gray;
+}
+
+.visible {
+  visibility: hidden;
+}
