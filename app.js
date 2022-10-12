@@ -29,34 +29,7 @@ p2TotalScore = 0;
 
 //Event listener for new game button.
 newGame.addEventListener("click", () => {
-  //Resetting current scores to begin new game.
-  p1CurScore = 0;
-  p2CurScore = 0;
-
-  //Resetting hold variables.
-  holdp1 = false;
-  holdp2 = false;
-
-  //Disabling the new game button.
-  newGame.disabled = true;
-
-  //Making roll dice and hold buttons visible.
-  btnContainer.classList.remove("visible");
-
-  //Enabling roll dice and hold buttons.
-  rollDice.disabled = false;
-  holdDice.disabled = false;
-
-  //Resetting p1 and p2 header text and currentscore color.
-  p1Header.textContent = "Player 1";
-  p1Header.style.color = "#fff";
-  p1CurScoreText.textContent = 0;
-  p1CurScoreText.style.color = "#fff";
-
-  p2Header.textContent = "Player 2";
-  p2Header.style.color = "#333";
-  p2CurScoreText.textContent = 0;
-  p2CurScoreText.style.color = "#333";
+  startNewGame();
 });
 
 ////////////////////////////////////////////////////////////////////
@@ -203,3 +176,27 @@ holdDice.addEventListener("click", () => {
     holdp2 = true;
   }
 });
+
+const startNewGame = () => {
+  p1CurScore = 0;
+  p2CurScore = 0;
+
+  holdp1 = false;
+  holdp2 = false;
+
+  newGame.disabled = true;
+  rollDice.disabled = false;
+  holdDice.disabled = false;
+
+  btnContainer.classList.remove("visible");
+
+  p1Header.textContent = "Player 1";
+  p1Header.style.color = "#fff";
+  p1CurScoreText.textContent = 0;
+  p1CurScoreText.style.color = "#fff";
+
+  p2Header.textContent = "Player 2";
+  p2Header.style.color = "#333";
+  p2CurScoreText.textContent = 0;
+  p2CurScoreText.style.color = "#333";
+};
